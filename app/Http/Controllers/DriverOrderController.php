@@ -36,10 +36,12 @@ class DriverOrderController extends Controller
 
     public function cancel_order(Request $request)
     {
+
 //        $this->validate($request,[
 //            'customer_id' => 'required',
 //            'ordered_at' => 'required',
 //        ]);
+
         DB::transaction(function () use ($request) {
             $driverOrder = DriverOrder::find($request->driver_order_id);
             if ($driverOrder){
@@ -52,7 +54,6 @@ class DriverOrderController extends Controller
                 $order->save();
             }
         });
-
 
         return response()->json(['message' => 'Driver cancel order.']);
     }

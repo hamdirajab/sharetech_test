@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app_form');
+    return view('welcome');
 });
 
-Route::group(['prefix' => 'app_form', 'as' => 'app_form.'], function () {
-    Route::get('/', 'FormAppController@index')->name('index');
-    Route::post('/store', 'FormAppController@store')->name('store');
-});
+//
+//Route::group(['prefix' => 'app_form', 'as' => 'app_form.'], function () {
+//    Route::get('/', 'FormAppController@index')->name('index');
+//    Route::post('/store', 'FormAppController@store')->name('store');
+//});
